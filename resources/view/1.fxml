@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.1815068493150685" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="705.0" prefWidth="1170.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.pogorelov.controller.Role_1_Manager_controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <ImageView fitHeight="155.0" fitWidth="155.0" layoutX="27.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../photo/Manager.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="createBtn" layoutX="14.0" layoutY="256.0" mnemonicParsing="false" onAction="#createBtnAction" prefHeight="41.0" prefWidth="181.0" text="Создать заказ" />
+            <Button fx:id="changeBtn" layoutX="14.0" layoutY="311.0" mnemonicParsing="false" onAction="#changeBtnAction" prefHeight="41.0" prefWidth="181.0" text="Редактировать заказ" />
+            <Label fx:id="roleLB" layoutX="68.0" layoutY="196.0" prefHeight="24.0" prefWidth="73.0" text="Менеджер" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Pane fx:id="WelcomePane" layoutX="120.0" layoutY="184.0" prefHeight="322.0" prefWidth="739.0">
+               <children>
+                  <Label layoutX="193.0" layoutY="123.0" prefHeight="39.0" prefWidth="374.0" text="Добро пожаловать!">
+                     <font>
+                        <Font name="Georgia Italic" size="38.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="331.0" layoutY="193.0" mnemonicParsing="false" onAction="#getWork" text="Есть работать! " />
+               </children>
+            </Pane>
+            <AnchorPane fx:id="CreatePanel" prefHeight="703.0" prefWidth="953.0">
+               <children>
+                  <Label layoutX="319.0" layoutY="30.0" text="Создание нового заказа">
+                     <font>
+                        <Font name="Georgia Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="321.0" layoutY="624.0" mnemonicParsing="false" onAction="#sendToBD" prefHeight="25.0" prefWidth="326.0" text="Отправить в базу данных" />
+                  <Label layoutX="382.0" layoutY="75.0" text="Инф-ция об устройстве" underline="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="123.0" text="Тип уcтройства: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="combobox" layoutX="171.0" layoutY="123.0" prefWidth="150.0" promptText="выбрать..." />
+                  <Label layoutX="333.0" layoutY="123.0" text="Марка уcтройства: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="markaTF" layoutX="491.0" layoutY="123.0" prefHeight="25.0" prefWidth="143.0" />
+                  <Label layoutX="647.0" layoutY="123.0" text="Модель уcтройства: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="modelTF" layoutX="816.0" layoutY="123.0" prefHeight="25.0" prefWidth="113.0" />
+                  <Label layoutX="403.0" layoutY="175.0" text="Данные клиента" underline="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="216.0" text="Ф.И.О: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fioTF" layoutX="106.0" layoutY="216.0" prefHeight="25.0" prefWidth="374.0" />
+                  <Label layoutX="510.0" layoutY="213.0" text="Телефон: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="telTF" layoutX="600.0" layoutY="213.0" prefHeight="25.0" prefWidth="249.0" />
+                  <Label layoutX="41.0" layoutY="266.0" text="Выездной: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="checkbox" layoutX="129.0" layoutY="267.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="23.0" />
+                  <Label layoutX="181.0" layoutY="266.0" text="Адрес:  ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addressTF" layoutX="236.0" layoutY="266.0" prefHeight="25.0" prefWidth="402.0" />
+                  <Label layoutX="444.0" layoutY="311.0" text="О заказе" underline="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="358.0" text="Статус: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="combobox2" layoutX="115.0" layoutY="358.0" prefWidth="150.0" promptText="выбрать..." />
+                  <Label layoutX="277.0" layoutY="358.0" text="Заявленная неисправность: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="neispravTF" layoutX="491.0" layoutY="358.0" prefHeight="82.0" prefWidth="443.0" />
+                  <Label layoutX="416.0" layoutY="453.0" text="Об исполнителе" underline="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="247.0" layoutY="493.0" text="Назначить: ">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="combobox3" layoutX="351.0" layoutY="493.0" prefHeight="25.0" prefWidth="316.0" />
+                  <Label layoutX="49.0" layoutY="537.0" text="Комментарий">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="kommentTF" layoutX="191.0" layoutY="537.0" prefHeight="66.0" prefWidth="739.0" />
+                  <Label layoutX="50.0" layoutY="562.0" text="для исполнителя:">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="changePanel" prefHeight="703.0" prefWidth="953.0">
+               <children>
+                  <TableView fx:id="table" layoutX="4.0" layoutY="31.0" prefHeight="522.0" prefWidth="947.0">
+                    <columns>
+                        <TableColumn fx:id="id" prefWidth="32.0" text="ID" />
+                        <TableColumn fx:id="type" prefWidth="79.0" text="Тип" />
+                        <TableColumn fx:id="marka" prefWidth="43.0" text="Тип" />
+                        <TableColumn fx:id="model" prefWidth="91.0" text="Модель" />
+                        <TableColumn fx:id="fio" prefWidth="154.0" text="Фамилия Имя" />
+                        <TableColumn fx:id="tel" prefWidth="98.0" text="Телефон" />
+                        <TableColumn fx:id="viezd" prefWidth="27.0" text="Выезд" />
+                        <TableColumn fx:id="address" prefWidth="71.0" text="Адрес" />
+                        <TableColumn fx:id="status" prefWidth="118.0" text="Статус" />
+                        <TableColumn fx:id="neispravnost" prefWidth="110.0" text="Неисправность" />
+                        <TableColumn fx:id="ispolnitel" prefWidth="121.0" text="Исполнитель" />
+                        <TableColumn fx:id="komment" prefWidth="51.0" text="Коммент" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="386.0" layoutY="598.0" mnemonicParsing="false" onAction="#changeBTN" prefHeight="41.0" prefWidth="181.0" text="Изменить" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="930.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="23.0" text="X" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
