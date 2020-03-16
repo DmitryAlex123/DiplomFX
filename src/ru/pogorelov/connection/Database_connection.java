@@ -17,6 +17,18 @@ public class Database_connection {
     private static String db_password = "qwerty123";
     private static int role;
 
+    public static void setUrl(String str){
+        url = str;
+    }
+
+    public static void setUsername(String str){
+        username = str;
+    }
+
+    public static void setPassword(String str){
+        db_password = str;
+    }
+
     public static int login(Login_structure data) throws Exception {
         //по нажатию кнопки "Вход" логин и пароль попадают сюда
         String login = data.getLogin();
