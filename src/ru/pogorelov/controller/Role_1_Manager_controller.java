@@ -39,12 +39,25 @@ public class Role_1_Manager_controller implements Initializable {
 
         Main.getPrimaryStage().hide();
         CreatePanel.setVisible(false);
-        WelcomePane.setVisible(true);
-        changePanel.setVisible(false);
+        WelcomePane.setVisible(false);
+        changePanel.setVisible(true);
         combobox.setItems(FXCollections.observableArrayList("Телефон", "Планшет", "Ноутбук"));
         combobox2.setItems(FXCollections.observableArrayList("в ремонте", "на согласовании", "к выдаче"));
         combobox3.setItems(FXCollections.observableArrayList("Алексей", "Юрий"));
 
+        list = Database_connection.getZakazesFromBD();
+        id.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("id"));
+        type.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("type"));
+        marka.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("marka"));
+        model.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("model"));
+        fio.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("fio"));
+        tel.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("tel"));
+        viezd.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("viezd"));
+        status.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("status"));
+        neispravnost.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("neispravnost"));
+        ispolnitel.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("ispolnitel"));
+        komment.setCellValueFactory(new PropertyValueFactory<Create_Zakaz_structure, String>("komment"));
+        table.setItems(list);
 
 
 
@@ -139,6 +152,8 @@ public class Role_1_Manager_controller implements Initializable {
         WelcomePane.setVisible(false);
         CreatePanel.setVisible(true);
         changePanel.setVisible(false);
+
+
     }
 
 

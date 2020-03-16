@@ -85,8 +85,27 @@ public class Login_controller implements Initializable {
         return Login_controller.stage;
     }
 
+    //*******
+    private static Stage connectionChangeStage;
 
+    private void setCStage(Stage stage) {
+        Login_controller.connectionChangeStage = stage;
+    }
 
+    static public Stage getCStage() {
+        return Login_controller.connectionChangeStage;
+    }
+
+    ///******
+    @FXML
+    private void openingConnectionChanger() throws Exception{
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/Connection data.fxml")));
+        setCStage(new Stage());
+        connectionChangeStage.initModality(Modality.APPLICATION_MODAL);
+        connectionChangeStage.setScene(scene);
+        connectionChangeStage.initStyle(StageStyle.UNDECORATED);
+        connectionChangeStage.show();
+    }
 
     //жалкие попытки универсалить код
     protected void openFXML(int unic_id) throws IOException {
